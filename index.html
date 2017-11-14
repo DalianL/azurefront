@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Computing App</title>
+		<title>SMS Analysis App</title>
 		<meta name="author" content="Dalian Barzellino">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<!-- Latest compiled and minified CSS BootStrap -->
@@ -24,32 +24,32 @@
 
 	</head>
 
+	<script>
+
+
+	</script>
+
 	<body>
-		  <script>
-		  	var client = new WindowsAzure.MobileServiceClient("http://smsanalysisapp.azurewebsites.net");
-		  	var table = client.getTable("SmsTable");
+		<div id="myPage" class="jumbotron text-center">
+		  	 <h1>SMS Analysis App</h1> 
+		  	 <p>The best application for your statitics</p> 
+		</div>	
 
-		  	function success(results) {
-		  		console.log("Read success :");
-				var numItemsRead = results.length;
+		<div class="container-fluid text-center">
 
-				for (var i = 0 ; i < results.length ; i++) {
-				   var row = results[i].Text;
-				   console.log(i + " " + row);
-				   // Each row is an object - the properties are the columns
-				}
-			}
+		  <div class="row">
+		  
+		    <div class="col-md-4">
+		    </div>
+		    <div class="col-md-4">
+		    	<h3>Marie</h3>
+		    	<span class="glyphicon glyphicon-signal logo"></span>
+		    </div>
 
-			function failure(error) {
-				console.log("Read fail");
-				throw new Error('Error loading data: ', error);
-			}
-
-			table
-				.read()
-				.then(success, failure);
-
-		  </script>
+		    <div class="col-md-4">
+		    </div>
+			
+		  </div>
 
 	</body>
 
