@@ -25,7 +25,23 @@
 	</head>
 
 	<script>
+		  	var client = new WindowsAzure.MobileServiceClient("http://smsanalysisapp.azurewebsites.net");
+		  	var tableRes = client.getTable("ResultTable");
 
+		  	function success(results) {
+		  		//console.log("Read success.");
+				document.getElementById("val1").innerHTML = results[0].num;
+
+			}
+
+			function failure(error) {
+				//console.log("Failure.");
+				throw new Error('Error loading data: ', error);
+			}
+
+		  	tableRes
+				.read()
+				.then(success, failure);
 
 	</script>
 
@@ -42,7 +58,7 @@
 		    <div class="col-md-4">
 		    </div>
 		    <div class="col-md-4">
-		    	<h3>Marie</h3>
+		    	<h3 id="val1"></h3>
 		    	<span class="glyphicon glyphicon-signal logo"></span>
 		    </div>
 
