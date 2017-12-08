@@ -30,8 +30,7 @@
 
 		  	function success(results) {
 		  		//console.log("Read success.");
-				document.getElementById("val1").innerHTML = results[0].num;
-
+				document.getElementById("val1").innerHTML = results[results.length - 1].num;
 			}
 
 			function failure(error) {
