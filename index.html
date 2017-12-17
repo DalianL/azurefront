@@ -24,9 +24,10 @@
 
 	</head>
 
-	<script>
+	<script>	
 		  	var client = new WindowsAzure.MobileServiceClient("http://smsanalysisapp.azurewebsites.net");
 		  	var tableRes = client.getTable("ResultTable");
+		  	var intervalId;
 
 		  	function success(results) {
 		  		//console.log("Read success.");
@@ -38,10 +39,12 @@
 				throw new Error('Error loading data: ', error);
 			}
 
-		  	tableRes
-				.read()
-				.then(success, failure);
-
+			intervalId = setInterval(function (j) {
+			  	tableRes
+					.read()
+					.then(success, failure);
+			}, 5000);
+			
 	</script>
 
 	<body>
