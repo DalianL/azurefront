@@ -30,7 +30,6 @@
 		  	var intervalId;
 
 		  	function success(results) {
-		  		//console.log("Read success.");
 				document.getElementById("val1").innerHTML = results[results.length - 1].num;
 			}
 
@@ -39,11 +38,15 @@
 				throw new Error('Error loading data: ', error);
 			}
 
-			intervalId = setInterval(function (j) {
-			  	tableRes
+			tableRes
 					.read()
 					.then(success, failure);
-			}, 5000);
+
+			// intervalId = setInterval(function (j) {
+			//   	tableRes
+			// 		.read()
+			// 		.then(success, failure);
+			// }, 3600000);
 			
 	</script>
 
