@@ -24,13 +24,24 @@
 
 	</head>
 
-	<script>	
+	<script>
 		  	var client = new WindowsAzure.MobileServiceClient("http://smsanalysisapp.azurewebsites.net");
 		  	var tableRes = client.getTable("ResultTable");
 		  	var intervalId;
+		  	var data = [];
 
 		  	function success(results) {
-				document.getElementById("val1").innerHTML = results[results.length - 1].num;
+		  		results[results.length - 1].num.split(',').forEach((elem) => {
+		  			data.push(elem);
+		  		});
+
+				document.getElementById("val1").innerHTML = 'Most contacted : ' + data[0];
+				document.getElementById("val2").innerHTML = 'Second most contacted : ' + data[1];
+				document.getElementById("val3").innerHTML = 'Third most contacted : ' + data[2];
+
+				document.getElementById("content1").innerHTML = 'Chat : ' + Math.floor(data[3]) + '% / Mail : ' + Math.floor(data[4]) + '%';
+				document.getElementById("content2").innerHTML = 'Chat : ' + Math.floor(data[5]) + '% / Mail : ' + Math.floor(data[6]) + '%';
+				document.getElementById("content3").innerHTML = 'Chat : ' + Math.floor(data[7]) + '% / Mail : ' + Math.floor(data[8]) + '%';
 			}
 
 			function failure(error) {
@@ -52,25 +63,31 @@
 
 	<body>
 		<div id="myPage" class="jumbotron text-center">
-		  	 <h1>SMS Analysis App</h1> 
-		  	 <p>The best application for your statitics</p> 
+		  <h1>SMS Analysis App</h1> 
+		  <p>The best application for your statitics</p> 
 		</div>	
 
 		<div class="container-fluid text-center">
 
 		  <div class="row">
-		  
 		    <div class="col-md-4">
+		      <h3 id="val1">Most contacted : </h3>
+		      <span class="glyphicon glyphicon-signal logo"></span>
+		      <div id="content1"></div>
 		    </div>
+		    
 		    <div class="col-md-4">
-		    	<h3 id="val1"></h3>
-		    	<span class="glyphicon glyphicon-signal logo"></span>
+		      <h3 id="val2">Second most contacted : </h3>
+		      <span class="glyphicon glyphicon-signal logo"></span>
+		      <div id="content2"></div>
 		    </div>
 
 		    <div class="col-md-4">
+		      <h3 id="val3">Third most contacted : </h3>
+		      <span class="glyphicon glyphicon-signal logo"></span>
+		      <div id="content3"></div>
 		    </div>
-			
-		  </div>
+		 </div>
 
 	</body>
 
