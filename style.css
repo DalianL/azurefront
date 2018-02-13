@@ -17,13 +17,13 @@ body {
     .col-md-4 {
         text-align: center;
         margin: 10px 0;
-        padding-top: 1px;
+        padding-top: 10px;
     }
 
     .col-md-12 {
         text-align: center;
-        margin: 10px 0;
-        padding-top: 1px;
+        margin: 10px;
+        padding-top: 10px;
     }
 }
 
@@ -35,24 +35,16 @@ body {
 }
 
 .glyphicon {
+    padding-left:10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #818181;
+}
+
+.glyphicon-signal {
     font-size: 25px;
     margin-bottom: 20px;
     color: #f4511e;
-}
-
-.glyphicon-comment {
-    padding-left:10px;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #818181;
-}
-
-.glyphicon-envelope {
-    padding-left:10px;
-    margin-left:15px;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #818181;
 }
 
 footer {
