@@ -16,8 +16,21 @@ body {
 @media screen and (max-width: 1000px) {
     .col-md-4 {
         text-align: center;
-        margin: 25px 0;
+        margin: 10px 0;
         padding-top: 1px;
+    }
+
+    .col-md-12 {
+        text-align: center;
+        margin: 10px 0;
+        padding-top: 1px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .row
+    {
+        margin:10px;
     }
 }
 
@@ -25,6 +38,21 @@ body {
     font-size: 25px;
     margin-bottom: 20px;
     color: #f4511e;
+}
+
+.glyphicon-comment {
+    padding-left:10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #818181;
+}
+
+.glyphicon-envelope {
+    padding-left:10px;
+    margin-left:15px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #818181;
 }
 
 footer {
@@ -37,4 +65,15 @@ footer {
     border-right-style: solid;
     border-left-width: 2px;
     border-left-style: solid;
+}
+
+.col-md-12 {
+    background-color: maroon;
+    color:#f2f2f2;
+    border:2px;
+}
+
+#content4
+{
+    color:#f2f2f2;
 }

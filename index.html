@@ -35,13 +35,23 @@
 		  			data.push(elem);
 		  		});
 
-				document.getElementById("val1").innerHTML = 'Most contacted : ' + data[0];
-				document.getElementById("val2").innerHTML = 'Second most contacted : ' + data[1];
-				document.getElementById("val3").innerHTML = 'Third most contacted : ' + data[2];
+				document.getElementById("val1").innerHTML = 'Most contacted :<br />' + data[0];
+				document.getElementById("val2").innerHTML = 'Second most contacted :<br />' + data[1];
+				document.getElementById("val3").innerHTML = 'Third most contacted :<br />' + data[2];
+				document.getElementById("content4").innerHTML = data[0];
 
-				document.getElementById("content1").innerHTML = 'Chat : ' + Math.floor(data[3]) + '% / Mail : ' + Math.floor(data[4]) + '%';
-				document.getElementById("content2").innerHTML = 'Chat : ' + Math.floor(data[5]) + '% / Mail : ' + Math.floor(data[6]) + '%';
-				document.getElementById("content3").innerHTML = 'Chat : ' + Math.floor(data[7]) + '% / Mail : ' + Math.floor(data[8]) + '%';
+				document.getElementById("content1").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[3]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.floor(data[4]) + '%';
+				document.getElementById("content2").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[5]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.floor(data[6]) + '%';
+				document.getElementById("content3").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[7]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.floor(data[8]) + '%';
+
+				var chat = document.querySelectorAll('.chat');
+				chat.forEach(function(el) { el.classList.add("glyphicon"); el.classList.add("glyphicon-comment");  });
+
+				var mail = document.querySelectorAll('.mail');
+				mail.forEach(function(el) { el.classList.add("glyphicon"); el.classList.add("glyphicon-envelope");  });
 			}
 
 			function failure(error) {
@@ -64,7 +74,7 @@
 	<body>
 		<div id="myPage" class="jumbotron text-center">
 		  <h1>SMS Analysis App</h1> 
-		  <p>The best application for your statitics</p> 
+		  <p>The best application for your statistics</p> 
 		</div>	
 
 		<div class="container-fluid text-center">
@@ -88,6 +98,30 @@
 		      <div id="content3"></div>
 		    </div>
 		 </div>
+
+		 <div class="row">
+		    <div class="col-md-12">
+		      <h3 id="val4">Contact most likely to be contacted :</h3>
+		      <span id="content4" class="glyphicon glyphicon-user"> </span>
+		    </div>
+		</div>
+
+		<div class="row">
+		    <div class="col-md-4">
+		      <h3 id="val5">Most contacted (Morning) :</h3>
+		      <span id="content5" class="glyphicon glyphicon-user"> </span>
+		    </div>
+
+		    <div class="col-md-4">
+		      <h3 id="val6">Most contacted (Afternoon) :</h3>
+		      <span id="content6" class="glyphicon glyphicon-user"> </span>
+		    </div>
+
+		    <div class="col-md-4">
+		      <h3 id="val7">Most contacted (Evening) :</h3>
+		      <span id="content7" class="glyphicon glyphicon-user"> </span>
+		    </div>
+		</div>
 
 	</body>
 
