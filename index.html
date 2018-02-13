@@ -38,7 +38,7 @@
 				document.getElementById("val1").innerHTML = 'Most contacted :<br />' + data[0];
 				document.getElementById("val2").innerHTML = 'Second most contacted :<br />' + data[1];
 				document.getElementById("val3").innerHTML = 'Third most contacted :<br />' + data[2];
-				document.getElementById("content4").innerHTML = data[0];
+				document.getElementById("content4").innerHTML = ' ' + data[0];
 
 				document.getElementById("content1").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[3]) + 
 				'% <span class="mail"> Mail</span> : ' + Math.floor(data[4]) + '%';
@@ -98,28 +98,13 @@
 		      <div id="content3"></div>
 		    </div>
 		 </div>
+		 
+		 <br>
 
 		 <div class="row">
 		    <div class="col-md-12">
-		      <h3 id="val4">Contact most likely to be contacted :</h3>
+		      <h3 id="val4">Contact most likely to be contacted right now :</h3>
 		      <span id="content4" class="glyphicon glyphicon-user"> </span>
-		    </div>
-		</div>
-
-		<div class="row">
-		    <div class="col-md-4">
-		      <h3 id="val5">Most contacted (Morning) :</h3>
-		      <span id="content5" class="glyphicon glyphicon-user"> </span>
-		    </div>
-
-		    <div class="col-md-4">
-		      <h3 id="val6">Most contacted (Afternoon) :</h3>
-		      <span id="content6" class="glyphicon glyphicon-user"> </span>
-		    </div>
-
-		    <div class="col-md-4">
-		      <h3 id="val7">Most contacted (Evening) :</h3>
-		      <span id="content7" class="glyphicon glyphicon-user"> </span>
 		    </div>
 		</div>
 
