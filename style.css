@@ -20,7 +20,7 @@ body {
         padding-top: 10px;
     }
 
-    .col-md-12 {
+    .col-md-6 {
         text-align: center;
         margin: 10px;
         padding-top: 10px;
@@ -28,8 +28,7 @@ body {
 }
 
 @media screen and (min-width: 1000px) {
-    .row
-    {
+    .row {
         margin:10px;
     }
 }
@@ -59,7 +58,7 @@ footer {
     border-left-style: solid;
 }
 
-.col-md-12 {
+.col-md-6 {
     background-color: maroon;
     color:#f2f2f2;
     border:2px;
