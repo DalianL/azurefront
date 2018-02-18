@@ -31,21 +31,26 @@
 		  	var data = [];
 
 		  	function success(results) {
+		  		// Read the statistics data from the server response
 		  		results[results.length - 1].num.split(',').forEach((elem) => {
 		  			data.push(elem);
 		  		});
 
+		  		// Display the names of the most contacted contacts
 				document.getElementById("val1").innerHTML = '1<sup>st</sup> most contacted :<br />' + data[0];
 				document.getElementById("val2").innerHTML = '2<sup>nd</sup> most contacted :<br />' + data[1];
 				document.getElementById("val3").innerHTML = '3<sup>rd</sup> most contacted :<br />' + data[2];
-				document.getElementById("content4").innerHTML = ' ' + data[0];
 
-				document.getElementById("content1").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[3]) + 
-				'% <span class="mail"> Mail</span> : ' + Math.floor(data[4]) + '%';
-				document.getElementById("content2").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[5]) + 
-				'% <span class="mail"> Mail</span> : ' + Math.floor(data[6]) + '%';
-				document.getElementById("content3").innerHTML = '<span class="chat"> Chat</span> : ' + Math.floor(data[7]) + 
-				'% <span class="mail"> Mail</span> : ' + Math.floor(data[8]) + '%';
+				// Display the statistics for the above contacts
+				document.getElementById("content1").innerHTML = '<span class="chat"> Chat</span> : ' + Math.round(data[3]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.round(data[4]) + '%';
+				document.getElementById("content2").innerHTML = '<span class="chat"> Chat</span> : ' + Math.round(data[5]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.round(data[6]) + '%';
+				document.getElementById("content3").innerHTML = '<span class="chat"> Chat</span> : ' + Math.round(data[7]) + 
+				'% <span class="mail"> Mail</span> : ' + Math.round(data[8]) + '%';
+
+				// Display the contact most likely to be contacted at the current time
+				document.getElementById("content4").innerHTML = ' ' + data[9];
 
 				var chat = document.querySelectorAll('.chat');
 				chat.forEach(function(el) { el.classList.add("glyphicon"); el.classList.add("glyphicon-comment");  });
